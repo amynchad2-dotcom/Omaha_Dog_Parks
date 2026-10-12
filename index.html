@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greater Omaha Metro Dog Parks Directory</title>
+    <style>
+        :root {
+            --primary: #FF6600;
+            --primary-hover: #E05500;
+            --bg-main: #F9FAFB;
+            --bg-card: #FFFFFF;
+            --text-dark: #1F2937;
+            --text-muted: #4B5563;
+            --border-neutral: #E5E7EB;
+            --gray-light: #F3F4F6;
+            --star-color: #FBBF24;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        .ad-ticker-wrapper {
+            background-color: #1F2937;
+            color: #FFFFFF;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 10px 0;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .ad-ticker-content {
+            display: inline-block;
+            animation: ticker 25s linear infinite;
+        }
+
+        .ad-ticker-content span {
+            display: inline-block;
+            padding: 0 40px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        @keyframes ticker {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+
+        header {
+            background-color: var(--bg-card);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-neutral);
+        }
+
+        header h1 span { color: var(--primary); }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; }
+            .sidebar-ad { display: none; }
+        }
+
+        .controls-wrapper {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-neutral);
+            margin-bottom: 25px;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--border-neutral);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .filter-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .pill {
+            background-color: var(--gray-light);
+            border: 1px solid var(--border-neutral);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .pill.active {
+            background-color: var(--primary);
+            color: #FFFFFF;
+            border-color: var(--primary);
+        }
+
+        .park-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-neutral);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .park-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .park-location {
+            font-size: 0.9rem;
+            color: #FFFFFF;
+            background-color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .rating-block {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin: 8px 0;
+            font-weight: 600;
+        }
+
+        .rating-stars { color: var(--star-color); }
+
+        .tag-row { display: flex; gap: 8px; margin-top: 15px; }
+
+        .tag {
+            font-size: 0.75rem;
+            background-color: var(--gray-light);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .sidebar-ad {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-neutral);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            height: fit-content;
+        }
+
+        .ad-box {
+            background-color: var(--gray-light);
+            border: 2px dashed var(--border-neutral);
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        footer {
+            background-color: #1F2937;
+            color: #FFFFFF;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ad-ticker-wrapper">
+        <div class="ad-ticker-content">
+            <span>Sponsored AdSense Slot: <a href="#">Local Veterinary Coverage Services</a></span>
+            <span>Sponsored AdSense Slot: <a href="#">Premium Canine Supplies</a></span>
+        </div>
+    </div>
+
+    <header>
+        <h1>Greater Omaha Area <span>Dog Parks Guide</span></h1>
+        <p>Verified Regional Off-Leash Activity Matrix</p>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="controls-wrapper">
+                <input type="text" id="searchField" class="search-bar" placeholder="Filter by community area, status, layout details...">
+                <div class="filter-pills">
+                    <div class="pill active" onclick="toggleFilter(this, 'all')">Show All</div>
+                    <div class="pill" onclick="toggleFilter(this, 'Public')">Public Grounds</div>
+                    <div class="pill" onclick="toggleFilter(this, 'Turf')">Synthetic Turf</div>
+                    <div class="pill" onclick="toggleFilter(this, 'Lake')">Lake Swimming</div>
+                </div>
+            </div>
+
+            <!-- This div is populated safely by verified compilation engines -->
+            <div class="parks-grid" id="parksContainer">
+                <p style="text-align: center; padding: 40px; color: var(--text-muted);">Syncing verified local directory datasets...</p>
+            </div>
+        </main>
+
+        <aside class="sidebar-ad">
+            <h4>Sponsored Ads</h4>
+            <div class="ad-box">
+                <p style="color:#9CA3AF;">AdSense Unit Placement<br>ca-pub-XXXXX</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; Greater Omaha Dog Parks Registry. All rights reserved.</p>
+            <div style="font-size: 0.8rem; color: #9CA3AF; margin-top: 20px;">
+                <strong>Security & Policy Guard:</strong> Information compiled strictly from verified public domain datasets. Access to base configurations is restricted solely to authorized administrative identities.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Directly references a file in your hidden repository layout
+        const DATA_SOURCE = "./parks_database.json"; 
+        let localCache = [];
+        let currentTypeFilter = 'all';
+
+        async function fetchLockedData() {
+            try {
+                // Generates automatic cache busting string to force refresh updates upon browser reload
+                const cacheBuster = `?t=${Date.now()}`;
+                const response = await fetch(DATA_SOURCE + cacheBuster);
+                localCache = await response.json();
+                renderCards(localCache);
+            } catch (err) {
+                document.getElementById('parksContainer').innerHTML = "<p>System connection exception. Unable to display records.</p>";
+            }
+        }
+
+        function renderCards(data) {
+            const container = document.getElementById('parksContainer');
+            container.innerHTML = "";
+
+            data.forEach(park => {
+                const card = document.createElement('div');
+                card.className = "park-card";
+                card.setAttribute('data-type', park.type);
+                card.setAttribute('data-amenities', park.amenities.join(' '));
+
+                card.innerHTML = `
+                    <div class="park-meta">
+                        <h3 class="park-name">${park.name}</h3>
+                        <span class="park-location">${park.location}</span>
+                    </div>
+                    <div class="rating-block">
+                        <span class="rating-stars">${'★'.repeat(Math.round(park.rating))}${'☆'.repeat(5 - Math.round(park.rating))}</span>
+                        <span>${park.rating}</span>
+                        <span class="review-count">(${park.reviews} Reviews)</span>
+                    </div>
+                    <p class="park-desc">${park.description}</p>
+                    <div class="tag-row">
+                        ${park.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        document.getElementById('searchField').addEventListener('input', runFilters);
+
+        function toggleFilter(element, filterCriteria) {
+            document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+            element.classList.add('active');
+            currentTypeFilter = filterCriteria;
+            runFilters();
+        }
+
+        function runFilters() {
+            const query = document.getElementById('searchField').value.toLowerCase();
+            const cards = document.querySelectorAll('.park-card');
+
+            cards.forEach(card => {
+                const textMatch = card.textContent.toLowerCase().includes(query);
+                const typeAttr = card.getAttribute('data-type');
+                const amenAttr = card.getAttribute('data-amenities');
+

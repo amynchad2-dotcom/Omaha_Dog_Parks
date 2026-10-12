@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Dewey Dog Park",
+    "location": "Omaha (Midtown)",
+    "rating": 4.6,
+    "reviews": 58,
+    "description": "Premium all-weather synthetic turf surface located between Downtown Omaha and Blackstone District. Includes custom agility training runs and operational seasonal splash mechanisms.",
+    "type": "Public",
+    "amenities": ["Turf"],
+    "tags": ["Public", "Synthetic Turf", "Midtown"]
+  },
+  {
+    "name": "Hefflinger Dog Park",
+    "location": "Omaha (North Omaha)",
+    "rating": 4.3,
+    "reviews": 480,
+    "description": "Massive 7-acre public perimeter layout off North 112th St. Completely split into a 5-acre general playground and a custom isolated 2-acre run engineered exclusively for small dog safety configurations.",
+    "type": "Public",
+    "amenities": [],
+    "tags": ["Public", "7 Acres", "North Omaha"]
+  },
+  {
+    "name": "Walnut Creek Leash Free Park",
+    "location": "Papillion / La Vista",
+    "rating": 4.5,
+    "reviews": 267,
+    "description": "Highly rated open grassland preserve bounded securely on three sides with the fourth margin ending directly into the reservoir shoreline for dog swimming activities.",
+    "type": "Public",
+    "amenities": ["Lake", "Wooded"],
+    "tags": ["Public", "Lake Swimming", "Papillion / La Vista"]
+  },
+  {
+    "name": "Chalco Hills Dog Exercise Area",
+    "location": "Millard / West Omaha / Ralston",
+    "rating": 4.5,
+    "reviews": 102,
+    "description": "Expansive open loop trailing system located at the Wehrspann Lake boundaries. Provides excellent off-leash trail mileage through forests and fields; paths are not enclosed by perimeter fencing.",
+    "type": "Public",
+    "amenities": ["Wooded"],
+    "tags": ["Public Area", "Unfenced Trails", "Millard / West Omaha"]
+  },
+  {
+    "name": "Valley View Dog Park",
+    "location": "Council Bluffs / East Radius",
+    "rating": 4.4,
+    "reviews": 340,
+    "description": "Spacious public compound serving local Iowa metro residents with dual separate entry lock systems, agility components, and fully level sod acreage for fetch runs.",
+    "type": "Public",
+    "amenities": [],
+    "tags": ["Public", "Council Bluffs", "Fenced"]
+  },
+  {
+    "name": "Jewell Dog Park",
+    "location": "Bellevue / South Radius",
+    "rating": 4.3,
+    "reviews": 195,
+    "description": "Secluded off-leash park wrapped securely beneath deep natural forest shade covers. Directly adjacent to Bellevue trail connections, providing cool play space during peak summer months.",
+    "type": "Public",
+    "amenities": ["Wooded"],
+    "tags": ["Public", "Bellevue", "Wooded Canopy"]
+  }
+]
